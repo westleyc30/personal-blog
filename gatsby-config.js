@@ -1,7 +1,8 @@
+require("dotenv").config()``
 module.exports = {
   siteMetadata: {
     title: `Westley Cho`,
-    description: `This is my portfolio/blog site. It contains any web development projects I may have and a collection of my thoughts regarding my journey.`,
+    description: `This is my portfolio/blog site. It contains any web development projects I may have and a collection of my thoughts regarding my journey into web development.`,
     author: `Westley Cho`,
   },
   plugins: [
@@ -25,6 +26,14 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
