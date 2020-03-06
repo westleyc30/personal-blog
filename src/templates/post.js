@@ -8,7 +8,9 @@ export const query = graphql`
       title
       slug
       text {
-        text
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }
@@ -17,6 +19,11 @@ export const query = graphql`
 const PostTemplate = ({ data: { contentfulPost: post } }) => (
   <Layout>
     <h1>{post.title}</h1>
+    <div
+      dangerouslySetInnerHTML={{
+        __html: post.text.childMarkdownRemark.html,
+      }}
+    />
   </Layout>
 );
 
