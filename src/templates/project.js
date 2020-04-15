@@ -3,11 +3,11 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 
 export const query = graphql`
-  query postQuery($slug: String!) {
-    contentfulBlogPost(slug: { eq: $slug }) {
+  query projectQuery($slug: String!) {
+    contentfulProject(slug: { eq: $slug }) {
       title
       slug
-      content {
+      log {
         childMarkdownRemark {
           html
         }
@@ -16,12 +16,12 @@ export const query = graphql`
   }
 `;
 
-const PostTemplate = ({ data: { contentfulBlogPost: post } }) => (
+const PostTemplate = ({ data: { contentfulProject: project } }) => (
   <Layout>
-    <h2>{post.title}</h2>
+    <h2>{project.title}</h2>
     <div
       dangerouslySetInnerHTML={{
-        __html: post.content.childMarkdownRemark.html,
+        __html: project.log.childMarkdownRemark.html,
       }}
     />
   </Layout>

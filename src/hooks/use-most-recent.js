@@ -1,22 +1,18 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-// text {
-//   text
-// }
-const usePosts = () => {
+const useMostRecent = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogPost(sort: { fields: createdAt, order: DESC }) {
+      allContentfulBlogPost(
+        limit: 5
+        sort: { fields: createdAt, order: DESC }
+      ) {
         edges {
           node {
             title
-            slug
-            description
+            updatedAt
             createdAt(formatString: "MMMM DD, YYYY")
-            updatedAt(formatString: "MMMM DD, YYYY")
-            content {
-              content
-            }
+            slug
           }
         }
       }
@@ -28,8 +24,7 @@ const usePosts = () => {
     slug: post.node.slug,
     createdAt: post.node.createdAt,
     updatedAt: post.node.updatedAt,
-    content: post.node.content.content,
   }));
 };
 
-export default usePosts;
+export default useMostRecent;

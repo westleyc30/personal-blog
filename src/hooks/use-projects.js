@@ -3,10 +3,10 @@ import { graphql, useStaticQuery } from 'gatsby';
 // text {
 //   text
 // }
-const usePosts = () => {
+const useProjects = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogPost(sort: { fields: createdAt, order: DESC }) {
+      allContentfulProject(sort: { fields: createdAt, order: DESC }) {
         edges {
           node {
             title
@@ -14,8 +14,8 @@ const usePosts = () => {
             description
             createdAt(formatString: "MMMM DD, YYYY")
             updatedAt(formatString: "MMMM DD, YYYY")
-            content {
-              content
+            log {
+              log
             }
           }
         }
@@ -23,13 +23,13 @@ const usePosts = () => {
     }
   `);
 
-  return data.allContentfulBlogPost.edges.map(post => ({
-    title: post.node.title,
-    slug: post.node.slug,
-    createdAt: post.node.createdAt,
-    updatedAt: post.node.updatedAt,
-    content: post.node.content.content,
+  return data.allContentfulProject.edges.map(project => ({
+    title: project.node.title,
+    slug: project.node.slug,
+    createdAt: project.node.createdAt,
+    updatedAt: project.node.updatedAt,
+    log: project.node.log.log,
   }));
 };
 
-export default usePosts;
+export default useProjects;
