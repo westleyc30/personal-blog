@@ -8,11 +8,21 @@ const PostList = () => {
   const posts = useMostRecent();
   return (
     <>
-      {posts.map(post => (
-        <li>
-          <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-        </li>
-      ))}
+      <div className="post-list">
+        <div className="list">
+          <h2 className="list__header">Blog</h2>
+          {posts.map(post => (
+            <li className="list__item">
+              <Link className="list__anchor" to={`/blog/${post.slug}`}>
+                {post.title}
+              </Link>
+            </li>
+          ))}
+          <Link className="list__footer" to="/blog">
+            more...
+          </Link>
+        </div>
+      </div>
     </>
   );
 };

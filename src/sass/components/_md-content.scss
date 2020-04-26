@@ -1,0 +1,56 @@
+.md-content {
+  grid-column: 7 / 13;
+  font-family: 'Montserrat', sans-serif;
+  font-size: inherit;
+  margin-top: 8rem;
+  margin-bottom: 16rem;
+
+  ul,
+  ol {
+    width: 80%;
+    margin: 0 auto 4rem auto;
+  }
+
+  blockquote {
+    margin-bottom: 4rem;
+    & p {
+      width: 80%;
+      margin: 2rem auto;
+      padding-bottom: 2rem;
+
+      border-bottom: 3px solid lighten($color: $color-black, $amount: 30%);
+      // &:before {
+      //   content: '"';
+      //   position: absolute;
+      //   top: 0;
+      //   left: -10px;
+      // }
+    }
+  }
+  img {
+    width: 100%;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: 0 auto 4rem auto;
+    font-size: $default-font-size;
+  }
+  tr {
+    border-bottom: 1px solid #ccc;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 4px;
+  }
+  td {
+    &:nth-child(1) {
+      font-weight: 700;
+    }
+    &:nth-child(n + 2) {
+      width: 75%;
+    }
+  }
+}

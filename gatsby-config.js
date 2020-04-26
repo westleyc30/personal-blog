@@ -14,7 +14,24 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        plugins: [
+          `gatsby-remark-images`,
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-emojis`,
+          'gatsby-remark-a11y-emoji',
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -37,14 +54,24 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    // {
+    //   resolve: 'gatsby-plugin-mdx',
+    //   options: {
+    //     defaultLayouts: {
+    //       default: require.resolve('./src/components/layout.js'),
+    //     },
+    //   },
+    // },
     {
-      resolve: 'gatsby-plugin-mdx',
+      resolve: 'gatsby-plugin-google-fonts',
       options: {
-        defaultLayouts: {
-          default: require.resolve('./src/components/layout.js'),
-        },
+        fonts: [
+          `Montserrat\: 300, 400, 400i, 600, 700, 700i`,
+          `Libre Baskerville\: 400, 400i, 700`,
+        ],
       },
     },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

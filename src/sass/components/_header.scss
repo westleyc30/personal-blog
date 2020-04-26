@@ -1,0 +1,22 @@
+.header {
+  height: 100vh;
+  background: $color-primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 340px;
+
+  // position: relative;
+
+  grid-column: 1 / 5;
+  flex-direction: column;
+
+  &__nav-box,
+  &__text-box {
+    width: 75%;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2rem;
+  }
+}

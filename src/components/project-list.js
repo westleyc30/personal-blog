@@ -8,11 +8,22 @@ const ProjectList = () => {
   const posts = useMostRecentProjects();
   return (
     <>
-      {posts.map(post => (
-        <li>
-          <Link to={`/projects/${post.slug}`}>{post.title}</Link>
-        </li>
-      ))}
+      <div className="projects-list">
+        <div className="list">
+          <h2 className="list__header">Projects</h2>
+
+          {posts.map(post => (
+            <li className="list__item">
+              <Link className="list__anchor" to={`/projects/${post.slug}`}>
+                {post.title}
+              </Link>
+            </li>
+          ))}
+          <Link className="list__footer" to="/projects">
+            more...
+          </Link>
+        </div>
+      </div>
     </>
   );
 };

@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.grid--main {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 70px);
+  grid-gap: 20px;
+  max-width: 1060px;
+}
+.header {
+  grid-column: 1 / 5;
+}
+.projects-list {
+  grid-column: 10 / 13;
+  // align-self: center;
+}
+
+.post-list {
+  grid-column: 6 / 9;
+  // align-self: center;
+}

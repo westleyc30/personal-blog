@@ -18,11 +18,16 @@ export const query = graphql`
 
 const PostTemplate = ({ data: { contentfulBlogPost: post } }) => (
   <Layout>
-    <h2>{post.title}</h2>
+    <div className="title-box">
+      <h2>{post.title}</h2>
+      <h3>by Westley Cho</h3>
+    </div>
+
     <div
       dangerouslySetInnerHTML={{
         __html: post.content.childMarkdownRemark.html,
       }}
+      className="md-content"
     />
   </Layout>
 );

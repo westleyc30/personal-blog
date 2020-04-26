@@ -1,0 +1,148 @@
+.heading-primary {
+  &--main {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 8px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &--sub {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}
+
+.nav-box {
+  display: flex;
+  flex-direction: column;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  &--link {
+    font-family: 'Montserrat';
+    font-size: 2rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000;
+    // border-left: 3px solid transparent;
+    transition: all 0.2s;
+
+    &:hover,
+    &:active {
+      border-left: 5px solid $color-secondary-dark;
+      padding-left: 1rem;
+    }
+
+    &:visited {
+      color: #000;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1.2rem;
+    }
+  }
+}
+
+.list {
+  text-decoration: none;
+  &__header {
+    font-family: 'Libre Baskerville';
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  &__item {
+    margin-bottom: 2rem;
+    font-family: 'Montserrat';
+    font-size: 1.6rem;
+    list-style-type: none;
+  }
+  &__anchor {
+    text-decoration: none;
+    color: #444;
+    &:visited {
+      color: #444;
+    }
+  }
+  &__footer {
+    text-decoration: none;
+    color: black;
+    font-family: $font-family-body;
+    font-weight: 600;
+    font-size: 1.6rem;
+  }
+}
+
+.header {
+  &__socials {
+    display: flex;
+    // flex-direction: column;
+    width: 75%;
+    justify-content: space-around;
+
+    &-icon {
+      font-size: 2.2rem;
+      color: rgba($color-black, 0.9);
+
+      &:hover,
+      &:active {
+        color: rgba($color-secondary-dark, 0.9);
+      }
+    }
+  }
+}
+
+.md-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Libre Baskerville', Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 2.5rem;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3.6rem;
+  }
+  h3 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.7rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  li {
+    font-size: $default-font-size;
+  }
+  a,
+  a:visited {
+    color: darken($color-secondary, 50%);
+    text-decoration: none;
+  }
+  a {
+    transition: all 0.3s;
+    &:active,
+    &:hover {
+      background-color: rgba($color-secondary, 0.9);
+    }
+  }
+
+  blockquote p {
+    font-family: $font-family-body;
+    font-weight: 600;
+    color: lighten($color: $color-black, $amount: 30%);
+    font-size: 2.2rem;
+  }
+}

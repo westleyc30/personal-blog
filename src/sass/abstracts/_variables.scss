@@ -1,0 +1,13 @@
+$color-primary: rgb(255, 208, 168);
+$color-primary-light: lighten($color-primary, 10%);
+
+$color-secondary: rgb(205, 228, 224);
+$color-secondary-dark: darken($color-secondary, 20%);
+
+$color-black: #333;
+$color-white: rgb(245, 245, 245);
+
+$color-grey-light: rgb(238, 238, 238);
+
+$default-font-size: 1.7rem;
+$font-family-body: 'Montserrat', sans-serif;

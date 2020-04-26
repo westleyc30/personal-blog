@@ -1,0 +1,208 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  background-color: whitesmoke; }
+
+.heading-primary--main {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 8px; }
+  .heading-primary--main:hover {
+    cursor: pointer; }
+
+.heading-primary--sub {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 400; }
+
+.nav-box {
+  display: flex;
+  flex-direction: column;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+  .nav-box--link {
+    font-family: 'Montserrat';
+    font-size: 2rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.2s; }
+    .nav-box--link:hover, .nav-box--link:active {
+      border-left: 5px solid #8bc0b7;
+      padding-left: 1rem; }
+    .nav-box--link:visited {
+      color: #000; }
+    .nav-box--link:not(:last-child) {
+      margin-bottom: 1.2rem; }
+
+.list {
+  text-decoration: none; }
+  .list__header {
+    font-family: 'Libre Baskerville';
+    font-size: 2rem;
+    margin-bottom: 2rem; }
+  .list__item {
+    margin-bottom: 2rem;
+    font-family: 'Montserrat';
+    font-size: 1.6rem;
+    list-style-type: none; }
+  .list__anchor {
+    text-decoration: none;
+    color: #444; }
+    .list__anchor:visited {
+      color: #444; }
+  .list__footer {
+    text-decoration: none;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem; }
+
+.header__socials {
+  display: flex;
+  width: 75%;
+  justify-content: space-around; }
+  .header__socials-icon {
+    font-size: 2.2rem;
+    color: rgba(51, 51, 51, 0.9); }
+    .header__socials-icon:hover, .header__socials-icon:active {
+      color: rgba(139, 192, 183, 0.9); }
+
+.md-content h1,
+.md-content h2,
+.md-content h3,
+.md-content h4,
+.md-content h5,
+.md-content h6 {
+  font-family: 'Libre Baskerville', Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 2.5rem; }
+
+.md-content h1 {
+  font-size: 4rem; }
+
+.md-content h2 {
+  font-size: 3.6rem; }
+
+.md-content h3 {
+  font-size: 3rem; }
+
+.md-content p {
+  font-size: 1.7rem;
+  line-height: 1.7;
+  margin-bottom: 2rem; }
+
+.md-content li {
+  font-size: 1.7rem; }
+
+.md-content a,
+.md-content a:visited {
+  color: #3e746a;
+  text-decoration: none; }
+
+.md-content a {
+  transition: all 0.3s; }
+  .md-content a:active, .md-content a:hover {
+    background-color: rgba(205, 228, 224, 0.9); }
+
+.md-content blockquote p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: gray;
+  font-size: 2.2rem; }
+
+.gatsby-highlight {
+  font-size: 1.7rem; }
+
+.header {
+  height: 100vh;
+  background: #ffd0a8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 340px;
+  grid-column: 1 / 5;
+  flex-direction: column; }
+  .header__nav-box, .header__text-box {
+    width: 75%;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2rem; }
+
+.projects-list,
+.post-list {
+  height: 100vh;
+  display: flex;
+  align-items: center; }
+
+.md-content {
+  grid-column: 7 / 13;
+  font-family: 'Montserrat', sans-serif;
+  font-size: inherit;
+  margin-top: 8rem;
+  margin-bottom: 16rem; }
+  .md-content ul,
+  .md-content ol {
+    width: 80%;
+    margin: 0 auto 4rem auto; }
+  .md-content blockquote {
+    margin-bottom: 4rem; }
+    .md-content blockquote p {
+      width: 80%;
+      margin: 2rem auto;
+      padding-bottom: 2rem;
+      border-bottom: 3px solid gray; }
+  .md-content img {
+    width: 100%; }
+  .md-content table {
+    border-collapse: collapse;
+    margin: 0 auto 4rem auto;
+    font-size: 1.7rem; }
+  .md-content tr {
+    border-bottom: 1px solid #ccc; }
+  .md-content th,
+  .md-content td {
+    text-align: left;
+    padding: 4px; }
+  .md-content td:nth-child(1) {
+    font-weight: 700; }
+  .md-content td:nth-child(n + 2) {
+    width: 75%; }
+
+.title-box {
+  grid-column: 5 / 7;
+  text-align: right; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative; }
+
+.grid--main {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 70px);
+  grid-gap: 20px;
+  max-width: 1060px; }
+
+.header {
+  grid-column: 1 / 5; }
+
+.projects-list {
+  grid-column: 10 / 13; }
+
+.post-list {
+  grid-column: 6 / 9; }
